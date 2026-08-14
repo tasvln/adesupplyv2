@@ -60,18 +60,18 @@ function isVideoSrc(src: unknown): boolean {
                             muted
                             loop
                             playsinline
-                            class="w-full aspect-video object-cover border border-line bg-black border-b-0 last:border-b-2"
+                            class="w-full aspect-video object-contain bg-black"
                         />
                     ) : (
                         <img
                             src={m}
                             alt={p.title}
-                            class="w-full aspect-video object-cover border border-line border-b-0 last:border-b-2"
+                            class="w-full aspect-video object-contain"
                         />
                     )
                 ))
             ) : (
-                <div class="w-full aspect-video border border-dashed border-line bg-card-2 flex items-center justify-center border-b-0 last:border-b-2">
+                <div class="w-full aspect-video bg-card-2 flex items-center justify-center">
                     <span class="text-[11px] tracking-[0.1em] text-ink-dim uppercase">
                         + Image / Video
                     </span>

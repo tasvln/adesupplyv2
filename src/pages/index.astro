@@ -19,6 +19,7 @@ const notes = [
 ];
 
 const entries = await getCollection('projects');
+
 const projects: ProjectItem[] = entries.map((project) => ({
   id: project.id,
   title: project.data.title,
@@ -29,7 +30,10 @@ const projects: ProjectItem[] = entries.map((project) => ({
   media: project.data.images,
   detail: project.data.description,
   tags: project.data.tags,
-  links: project.data.links ? [{ label: 'Github', href: project.data.links.github }] : [],
+  links: [
+    ...(project.data.links?.github ? [{ label: 'GitHub', href: project.data.links.github }] : []),
+    ...(project.data.links?.demo ? [{ label: 'Live', href: project.data.links.demo }] : []),
+  ],
 }));
 ---
 
